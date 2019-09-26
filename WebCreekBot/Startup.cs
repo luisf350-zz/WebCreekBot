@@ -31,6 +31,8 @@ namespace WebCreekBot
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddSingleton<IConfiguration>(Configuration);
+
             // Create the credential provider to be used with the Bot Framework Adapter.
             services.AddSingleton<ICredentialProvider, ConfigurationCredentialProvider>();
 
@@ -49,8 +51,11 @@ namespace WebCreekBot
             // The Dialog that will be run by the bot.
             services.AddSingleton<MainDialog>();
 
-            // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            services.AddTransient<IBot, RichCardsBot>();
+            // Uncomment is you want DialogBot
+            //services.AddTransient<IBot, DialogBot>();
+
+            // Uncomment is you want ImagenBot
+            services.AddTransient<IBot, ImagenBot>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

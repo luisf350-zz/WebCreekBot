@@ -23,11 +23,7 @@ namespace WebCreekBot.Bots
                 // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    var reply = MessageFactory.Text("Bienvenido al Bot de RichCards."
-                        + Environment.NewLine +
-                        "Vamos a mirar los diferentes tipos de tarjetas."
-                        + Environment.NewLine + Environment.NewLine +
-                        "Seleccione una tarjeta.");
+                    var reply = MessageFactory.Text($"Hola.{Environment.NewLine}Bienvenido al Bot de RichCards.");
 
                     await turnContext.SendActivityAsync(reply, cancellationToken);
                 }
