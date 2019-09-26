@@ -52,10 +52,13 @@ namespace WebCreekBot
             services.AddSingleton<MainDialog>();
 
             // Uncomment is you want DialogBot
-            //services.AddTransient<IBot, DialogBot>();
+            //services.AddTransient<IBot, RichCardsBot>();
 
             // Uncomment is you want ImagenBot
-            services.AddTransient<IBot, ImagenBot>();
+            //services.AddTransient<IBot, ImagenBot>();
+
+            // Uncomment is you want ContentModeratorBot
+            services.AddTransient<IBot, ContentModeratorBot>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

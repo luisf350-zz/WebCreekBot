@@ -37,6 +37,7 @@ namespace WebCreekBot.Bots
                 {
                     await turnContext.SendActivityAsync(
                         $"Bienvenido al Bot de Análisis de Imágenes." +
+                        Environment.NewLine +
                         $"Seleccione una imagen para ser analizada...",
                         cancellationToken: cancellationToken);
                 }
